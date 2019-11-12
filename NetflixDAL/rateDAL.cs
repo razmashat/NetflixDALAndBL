@@ -13,7 +13,7 @@ namespace NetflixDAL
     class rateDAL
     {
 
-        public int test;
+       // public int test;
 
 
         const string TABEL = "rateTBL";

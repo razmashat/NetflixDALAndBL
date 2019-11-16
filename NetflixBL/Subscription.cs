@@ -26,7 +26,7 @@ namespace NetflixBL
       description = ds.Tables["subByIdTbl"].Rows[0]["description"].ToString();
       amountpermonth = int.Parse(ds.Tables["subByIdTbl"].Rows[0]["amountpermonth"].ToString());
       SeriesAmount = int.Parse(ds.Tables["subByIdTbl"].Rows[0]["SeriesAmount"].ToString());
-      int a =0;
+  
 
   
 

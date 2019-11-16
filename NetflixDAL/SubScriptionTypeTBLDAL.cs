@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using DrivingDAL;
 namespace NetflixDAL
 {
-    class SubScriptionTypeTBLDAL
+  public  class SubScriptionTypeTBLDAL
     {
 
         const string TABEL = "SubScriptionTypeTBL";

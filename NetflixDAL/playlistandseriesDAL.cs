@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,7 +10,7 @@ using DrivingDAL;
 
 namespace NetflixDAL
 {
-    class playlistandseriesDAL
+    public class playlistandseriesDAL
     {
 
 

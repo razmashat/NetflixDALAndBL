@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,7 +8,7 @@ using DrivingDAL;
 
 namespace NetflixDAL
 {
-    class UserDAL
+    public class UserDAL
     {
         const string TABEL = "UserTBL";
         const string TABEL2 = "SeriesAndUserTBL";

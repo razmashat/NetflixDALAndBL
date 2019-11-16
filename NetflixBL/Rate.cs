@@ -26,6 +26,7 @@ namespace NetflixBL
        Starts = int.Parse(ds.Tabels.Rows[0]["Stars"].ToString());
        Author = ds.Tabels.Rows[0]["Author"].ToString();
        EpisodeRated = int.Parse(ds.Tabels.Rows[0]["EpisodeRated"].ToString());
+       //tesr mdsfbkj
 
 
 

@@ -10,7 +10,7 @@ namespace NetflixDAL
 {
 
    
-    class rateDAL
+    public class rateDAL
     {
 
        // public int test;

@@ -14,7 +14,7 @@ namespace NetflixBL
         {
 
 
-        Console.WriteLine("This is a test"):
+            Console.WriteLine("This is a test");
 
         }
     }

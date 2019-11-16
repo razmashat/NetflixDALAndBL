@@ -22,10 +22,10 @@ namespace NetflixBL
 
        
        DataSet ds = rateDAL.GetRateByID(ID);
-       RateID = int.Parse(ds.Tabels.Rows[0]["RateID"].ToString());
-       Starts = int.Parse(ds.Tabels.Rows[0]["Stars"].ToString());
-       Author = ds.Tabels.Rows[0]["Author"].ToString();
-       EpisodeRated = int.Parse(ds.Tabels.Rows[0]["EpisodeRated"].ToString());
+       RateID = int.Parse(ds.Tables.Rows[0]["RateID"].ToString());
+       Starts = int.Parse(ds.Tables.Rows[0]["Stars"].ToString());
+       Author = ds.Tables.Rows[0]["Author"].ToString();
+       EpisodeRated = int.Parse(ds.Tables.Rows[0]["EpisodeRated"].ToString());
    
 
 

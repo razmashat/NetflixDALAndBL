@@ -13,6 +13,8 @@ namespace NetflixBL
         private int AdminID;
         private string AdminName;
         private string AdminPassword;
+        private List<User> MyUsers;
+        private List<Series> MySeries;
 
         public Admin(int ID) {
             DataSet ds = AdminDAL.GetAdminByID(ID);
@@ -21,5 +23,29 @@ namespace NetflixBL
             AdminPassword = ds.Tables["adminByIdTbl"].Rows[0]["AdminPassword"].ToString();
 
         }
+
+        public void GetSeries()
+        {
+
+            DataSet ds = SeriesDAL.GetSeriesByAdmin(AdminID);
+            for (int i = 0; i < ds.Tables["seriesByAdminTbl"].Rows.Count; i++)
+            {
+                MySeries.Add(new Series(int.Parse(ds.Tables["seriesByAdminTbl"].Rows[i]["SeriesID"].ToString())));
+            }
+
+        }
+
+
+        public void GetUsers()
+        {
+
+            DataSet ds = UserDAL.GetuserByAdmin(AdminID);
+            for (int i = 0; i < ds.Tables["userByAdminTbl"].Rows.Count; i++)
+            {
+                MyUsers.Add(new User((ds.Tables["userByAdminTbl"].Rows[i]["username"].ToString())));
+            }
+
+        }
+
     }
 }

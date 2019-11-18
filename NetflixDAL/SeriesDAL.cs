@@ -50,6 +50,13 @@ namespace NetflixDAL
         }
 
 
+        public static DataSet GetSeriesByAdmin(int id)
+        {
+            string id1 = stringbuilder(id.ToString());
+            return OleDbHelper.Fill("select * from " + TABEL + " WHERE " + filed3 + " = " + id, "seriesByAdminTbl");
+        }
+
+
         public static DataSet InnerjoinUser(int id)
         {
 

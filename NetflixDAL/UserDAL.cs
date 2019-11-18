@@ -59,6 +59,12 @@ namespace NetflixDAL
 
         }
 
+        public static DataSet GetuserByAdmin(int Admin)
+        {
+            return OleDbHelper.Fill("select * from UserTBL WHERE MyAdmin = " + Admin, "userByAdminTbl");
+        }
+
+
 
         public static DataSet GetuserByID(string username)
         {

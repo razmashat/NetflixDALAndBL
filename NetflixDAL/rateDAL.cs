@@ -13,7 +13,7 @@ namespace NetflixDAL
     public class rateDAL
     {
 
-       // public int test;
+      
 
 
         const string TABEL = "rateTBL";
@@ -51,6 +51,12 @@ namespace NetflixDAL
             return OleDbHelper.Fill("select * from " + TABEL + " WHERE " + filed1 + " = " + id, "rateByIdTbl");
         }
 
+        public static DataSet GetRateByUser(string username, int EpiID)
+        {
+            username = stringbuilder(username);
+            return OleDbHelper.Fill("select * from " + TABEL + " WHERE " + filed3 + " = " + username + " AND " + filed4 + " = " +EpiID ,"rateByUserTbl");
+        }
+
 
 
         public static void UpdateRateByID(string Author, int stars, int EpiNun, int subid)
@@ -71,6 +77,16 @@ namespace NetflixDAL
 
 
         }
+
+        public static bool IsExistUser(string username, int EpiID)
+        {
+
+            DataSet ds = GetRateByUser(username,EpiID);
+            return (ds.Tables["rateByUserTbl"].Rows.Count > 0);
+
+
+        }
+
 
     }
 }

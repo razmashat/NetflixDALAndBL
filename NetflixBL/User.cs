@@ -40,5 +40,19 @@ namespace NetflixBL
             }
 
         }
+
+
+        public bool Rate(int EpiID,int Stars)
+        {
+
+            if (rateDAL.IsExistUser(username,EpiID))
+            {
+                return false;
+            }
+
+            rateDAL.Insert(username,EpiID,Stars);
+            return true;
+
+        }
     }
 }

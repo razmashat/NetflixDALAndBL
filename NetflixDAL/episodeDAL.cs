@@ -56,6 +56,12 @@ namespace NetflixDAL
             return OleDbHelper.Fill("select * from " + TABEL + " WHERE " + filed1 + " = " + id, "epiByIdTbl");
         }
 
+        public static DataSet GetepiBySeries(int SID, int EID, int ENUM)
+        {
+            
+            return OleDbHelper.Fill("select * from " + TABEL + " WHERE " + filed4 + " = " + SID + " AND " + filed5 + " = " + EID + " AND " + filed6 + " = " + ENUM, "epiBySeriesTbl");
+        }
+
 
 
         public static void UpdateUserBySubID(string name, int length, int series, int seasnenum, int epinum, int subid)
@@ -83,6 +89,16 @@ namespace NetflixDAL
 
             DataSet ds = GetepiByID(ID);
             return (ds.Tables["epiByIdTbl"].Rows.Count > 0);
+
+
+        }
+
+
+        public static bool IsExistSeries(int SID,int EID, int ENUM)
+        {
+
+            DataSet ds = GetepiBySeries(SID,EID,ENUM);
+            return (ds.Tables["e"].Rows.Count > 0);
 
 
         }

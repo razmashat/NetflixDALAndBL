@@ -47,5 +47,28 @@ namespace NetflixBL
 
         }
 
+        public void CreateSeries(string name,string descreption)
+        {
+
+            SeriesDAL.Insert(name,AdminID,descreption);
+            GetSeries();
+
+        }
+
+        public bool AddEpisode(int SID, int EID, int ENUM,string name,int length)
+        {
+
+            if (episodeDAL.IsExistSeries(SID,EID,ENUM))
+            {
+
+                return false;
+
+            }
+
+            episodeDAL.Insert(name,length,SID,EID,ENUM);
+            return true;
+
+        }
+
     }
 }

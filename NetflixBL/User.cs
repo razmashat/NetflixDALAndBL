@@ -15,7 +15,7 @@ namespace NetflixBL
         private int MyAdmin { get; }
         private int subscriptiontype { get; }
         private string email { get; }
-        private List<Series> SeriesList { get; }
+        private List<Series> SeriesList { get; set; }
 
         public User (string ID){
 
@@ -32,6 +32,7 @@ namespace NetflixBL
 
         public void GetSeries()
         {
+            
             DataSet ds = UserDAL.InnerjoinSeries(username);
             for (int i = 0; i < ds.Tables["sandstbl"].Rows.Count; i++)
             {

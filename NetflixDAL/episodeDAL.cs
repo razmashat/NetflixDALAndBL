@@ -70,7 +70,14 @@ namespace NetflixDAL
             OleDbHelper.DoQuery("UPDATE " + TABEL + " SET " + filed2 + "=" + name + ", " + filed3 + "=" + length1 + ", " + filed4 + "=" + series1+ ", "+filed5+ "="+seannum1+", "+filed6+"="+epinum1+ " WHERE " + filed1 + "=" + subid.ToString());
         }
 
- 
+
+        public static DataSet GetEpiBySeriesID(int id)
+        {
+            string id1 = stringbuilder(id.ToString());
+            return OleDbHelper.Fill("select * from " + TABEL + " WHERE " + filed4 + " = " + id, "epiBySidTbl");
+        }
+
+
         public static bool IsExist(int ID)
         {
 

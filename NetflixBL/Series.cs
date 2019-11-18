@@ -12,10 +12,11 @@ namespace NetflixBL
     {
         
 
-      private int SeriesID;
-      private string SeriesName;
-      private int SeriesAdmin;
-      private string description;
+      private int SeriesID { get; }
+        private string SeriesName { get; }
+        private int SeriesAdmin { get; }
+        private string description { get; }
+        private List<Episode> episodelist { get; }
 
       public Series (int ID){
 
@@ -26,11 +27,24 @@ namespace NetflixBL
              SeriesName = ds.Tables["seriesByIdTbl"].Rows[0]["SeriesName"].ToString();
              description = ds.Tables["seriesByIdTbl"].Rows[0]["description"].ToString();
              SeriesAdmin = int.Parse(ds.Tables["seriesByIdTbl"].Rows[0]["SeriesAdmin"].ToString());
-
+             episodelist = new List<Episode>();
+             
 
              
              
       }
+
+
+        public void GetEpisodes()
+        {
+            DataSet ds = episodeDAL.GetEpiBySeriesID(SeriesID);
+            for (int i = 0; i < ds.Tables["epiBySidTbl"].Rows.Count; i++)
+            {
+                episodelist.Add(new Episode(int.Parse(ds.Tables["epiBySidTbl"].Rows[i]["EpisdeID"].ToString())));
+            }
+
+
+        }
 
 
     }

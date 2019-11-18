@@ -26,12 +26,29 @@ namespace NetflixBL
         }
 
 
-        public bool Login(string username, string pass)
+        public int Login(string username, string pass)
         {
-
-
-
-
+            if (UserDAL.IsExist(username))
+            {
+                DataSet ds = UserDAL.GetuserByID(username);
+                if (pass == ds.Tables["userByIdTbl"].Rows[0]["pass"].ToString())
+                {
+                    return 1;
+                }
+                return 0;
+            }
+            int result = -2;
+            int.TryParse(username, out result);
+            if (AdminDAL.IsExist(result))
+            {
+                DataSet ds = AdminDAL.GetAdminByID(result);
+                if (pass == ds.Tables["adminByIdTbl"].Rows[0]["AdminPassword"].ToString())
+                {
+                    return 2;
+                }
+                return 0;
+            }
+            return 0;
         }
 
 

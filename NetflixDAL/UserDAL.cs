@@ -50,7 +50,7 @@ namespace NetflixDAL
         }
 
 
-        public static DataSet InnerjoinUser(string id)
+        public static DataSet InnerjoinSeries(string id)
         {
 
             id = "\"" + id + "\"";

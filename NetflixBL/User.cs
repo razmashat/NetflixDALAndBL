@@ -54,5 +54,25 @@ namespace NetflixBL
             return true;
 
         }
+
+        public DataSet SearchSeries(string name)
+        {
+
+            return SeriesDAL.GetSeriesByName(name);
+
+        }
+
+
+        public int AddSeries(int sid)
+        {
+            Subscription sub = new Subscription(subscriptiontype);
+            if (SeriesList.Count >= sub.Seriesamount)
+            {
+                return -1;
+            }
+
+            SeriesAndUserDAL.Insert(username,sid);
+            return 0;
+        }
     }
 }

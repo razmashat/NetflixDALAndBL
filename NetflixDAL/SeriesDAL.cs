@@ -51,6 +51,12 @@ namespace NetflixDAL
             return OleDbHelper.Fill("select * from " + TABEL + " WHERE " + filed1 + " = " + id, "seriesByIdTbl");
         }
 
+        public static DataSet GetSeriesByName(string name)
+        {
+            name = stringbuilder(name);
+            return OleDbHelper.Fill("select * from " + TABEL + " WHERE " + filed2 + " = " + name, "seriesByIdTbl");
+        }
+
 
         public static DataSet GetSeriesByAdmin(int id)
         {

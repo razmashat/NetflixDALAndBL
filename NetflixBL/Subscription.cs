@@ -12,10 +12,16 @@ namespace NetflixBL
     {
 
 
-    private int SubscriptionID;
-    private string description;
-    private int amountpermonth;
-    private int SeriesAmount;
+        private int SubscriptionID;
+        private string description;
+        private int amountpermonth;
+        private int SeriesAmount;
+        public int Seriesamount
+        {
+            get { return SeriesAmount; }
+            set { }
+
+        }
 
 
     public Subscription(int ID) {

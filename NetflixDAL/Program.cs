@@ -49,7 +49,7 @@ namespace NetflixDAL
             // SeriesAndUserDAL.Insert("razmashat",1);
             //  SeriesAndUserDAL.Insert("razmashat", 2);
             // DataSet ds= SeriesDAL.InnerjoinUser(2);
-            DataSet ds = UserDAL.InnerjoinUser("razmashat");
+   
             // playlistandseriesDAL.DelT(1,1);
             //  SeriesAndUserDAL.DelT("razmashat", 1);
             // bool f = SubScriptionTypeTBLDAL.IsExist(34);

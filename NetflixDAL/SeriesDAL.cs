@@ -20,6 +20,7 @@ namespace NetflixDAL
         const string filed2 = "SeriesName";
         const string filed3 = "SeriesAdmin";
         const string filed4 = "description";
+        const string filed5 = "Genre";
 
 
 
@@ -29,12 +30,13 @@ namespace NetflixDAL
             return "\"" + s + "\"";
         }
 
-        public static void Insert(string seriename, int admin, string description)
+        public static void Insert(string seriename, int admin, string description, string genre)
         {
              seriename = stringbuilder(seriename);
             string admin1 = stringbuilder(admin.ToString());
             description = stringbuilder(description);
-            OleDbHelper.InsertWithAutoNumKey("INSERT INTO " + TABEL + "(" + filed2 + "," + filed3 + "," + filed4 + ") VALUES (" + seriename + "," + admin + "," + description + ")");
+            genre = stringbuilder(genre);
+            OleDbHelper.InsertWithAutoNumKey("INSERT INTO " + TABEL + "(" + filed2 + "," + filed3 + "," + filed4 + ","+filed5+") VALUES (" + seriename + "," + admin + "," + description + ","+genre+")");
 
            
         }
@@ -82,14 +84,15 @@ namespace NetflixDAL
 
 
 
-        public static void UpdateUserBySubID(string des, int admin, string name, int subid)
+        public static void UpdateUserBySubID(string des, int admin, string name, int subid, string genre)
         {
-            // OleDbHelper.DoQuery("UPDATE UserTBL SET pass='" + pass + "', MyAdmin='" + MyAdmin + "',sub='" + sub + "' , email='" + email + "' WHERE username='" + username+ "'");
+           
             des = stringbuilder(des);
             string admin1 = stringbuilder(admin.ToString());
             name = stringbuilder(name);
             string id = stringbuilder(subid.ToString());
-            OleDbHelper.DoQuery("UPDATE " + TABEL + " SET " + filed2 + "=" + name + ", " + filed3 + "=" + admin + "," + filed4 + "=" + des + " WHERE " + filed1 + "=" + subid.ToString());
+            genre = stringbuilder(genre);
+            OleDbHelper.DoQuery("UPDATE " + TABEL + " SET " + filed2 + "=" + name + ", " + filed3 + "=" + admin + ", " + filed4 + "=" + des +", "+filed5+"="+genre+ " WHERE " + filed1 + "=" + subid.ToString());
         }
 
         public static DataSet InnerjoinEpi(int id)

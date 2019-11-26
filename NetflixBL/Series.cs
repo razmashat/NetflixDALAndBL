@@ -10,13 +10,13 @@ namespace NetflixBL
 {
     class Series
     {
-        
 
-      private int SeriesID { get; }
-        private string SeriesName { get; }
-        private int SeriesAdmin { get; }
-        private string description { get; }
-        private List<Episode> episodelist { get; }
+
+        private int SeriesID;
+        private string SeriesName;
+        private int SeriesAdmin;
+        private string description;
+        private List<Episode> episodelist;
 
       public Series (int ID){
 

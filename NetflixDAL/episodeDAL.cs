@@ -22,6 +22,7 @@ namespace NetflixDAL
         const string filed4 = "EpiSeries";
         const string filed5 = "SeasonNum";
         const string filed6 = "EpiNum";
+        const string filed7 = "EpiURL";
 
 
 
@@ -32,14 +33,15 @@ namespace NetflixDAL
             return "\"" + s + "\"";
         }
 
-        public static void Insert(string name, int length, int series,int seasnenum,int epinum)
+        public static void Insert(string name, int length, int series,int seasnenum,int epinum,string url)
         {
             name = stringbuilder(name);
             string length1 = stringbuilder(length.ToString());
             string series1 = stringbuilder(series.ToString());
             string seannum1 = stringbuilder(seasnenum.ToString());
-            string epinum1 = stringbuilder(epinum.ToString()); 
-            OleDbHelper.InsertWithAutoNumKey("INSERT INTO " + TABEL + "(" + filed2 + "," + filed3 + "," + filed4 + "," + filed5+","+filed6+") VALUES (" + name + "," + length1 + "," + series1 + ","+seannum1+","+epinum1+ ")");
+            string epinum1 = stringbuilder(epinum.ToString());
+            url = stringbuilder(url);
+            OleDbHelper.InsertWithAutoNumKey("INSERT INTO " + TABEL + "(" + filed2 + "," + filed3 + "," + filed4 + "," + filed5+","+filed6+","+filed7+") VALUES (" + name + "," + length1 + "," + series1 + ","+seannum1+","+epinum1+ ","+url+")");
 
             //  OleDbHelper.DoQuery("INSERT INTO" + TABEL+ "(username,pass,MyAdmin,subscriptiontype,email) VALUES (" + username + "," + pass + "," + MyAdmin1 + "," + sub1 + "," + email + ")");
         }
@@ -64,7 +66,7 @@ namespace NetflixDAL
 
 
 
-        public static void UpdateUserBySubID(string name, int length, int series, int seasnenum, int epinum, int subid)
+        public static void UpdateUserBySubID(string name, int length, int series, int seasnenum, int epinum, int subid,string url)
         {
             // OleDbHelper.DoQuery("UPDATE UserTBL SET pass='" + pass + "', MyAdmin='" + MyAdmin + "',sub='" + sub + "' , email='" + email + "' WHERE username='" + username+ "'");
             name = stringbuilder(name);
@@ -73,7 +75,8 @@ namespace NetflixDAL
             string seannum1 = stringbuilder(seasnenum.ToString());
             string epinum1 = stringbuilder(epinum.ToString());
             string id = stringbuilder(subid.ToString());
-            OleDbHelper.DoQuery("UPDATE " + TABEL + " SET " + filed2 + "=" + name + ", " + filed3 + "=" + length1 + ", " + filed4 + "=" + series1+ ", "+filed5+ "="+seannum1+", "+filed6+"="+epinum1+ " WHERE " + filed1 + "=" + subid.ToString());
+            url = stringbuilder(url);
+            OleDbHelper.DoQuery("UPDATE " + TABEL + " SET " + filed2 + "=" + name + ", " + filed3 + "=" + length1 + ", " + filed4 + "=" + series1+ ", "+filed5+ "="+seannum1+", "+filed6+"="+epinum1+", "+filed7+"="+url+ " WHERE " + filed1 + "=" + subid.ToString());
         }
 
 
@@ -98,7 +101,7 @@ namespace NetflixDAL
         {
 
             DataSet ds = GetepiBySeries(SID,EID,ENUM);
-            return (ds.Tables["e"].Rows.Count > 0);
+            return (ds.Tables["epiBySeriesTbl"].Rows.Count > 0);
 
 
         }

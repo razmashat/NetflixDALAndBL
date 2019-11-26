@@ -13,7 +13,7 @@ namespace NetflixBL
         private int AdminID;
         private string AdminName;
         private string AdminPassword;
-        private List<User> MyUsers;
+        public List<User> MyUsers;
         private List<Series> MySeries;
 
         public Admin(int ID) {
@@ -47,15 +47,15 @@ namespace NetflixBL
 
         }
 
-        public void CreateSeries(string name,string descreption)
+        public void CreateSeries(string name,string descreption,string genre)
         {
 
-            SeriesDAL.Insert(name,AdminID,descreption);
+            SeriesDAL.Insert(name,AdminID,descreption,genre);
             GetSeries();
 
         }
 
-        public bool AddEpisode(int SID, int EID, int ENUM,string name,int length)
+        public bool AddEpisode(int SID, int EID, int ENUM,string name,int length,string url)
         {
 
             if (episodeDAL.IsExistSeries(SID,EID,ENUM))
@@ -65,7 +65,7 @@ namespace NetflixBL
 
             }
 
-            episodeDAL.Insert(name,length,SID,EID,ENUM);
+            episodeDAL.Insert(name,length,SID,EID,ENUM,url);
             return true;
 
         }

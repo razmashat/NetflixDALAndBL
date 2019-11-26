@@ -15,7 +15,8 @@ namespace NetflixBL
         private int EpisodeLength;
         private int EpiSeries;
         private int SeasonNum;
-        private int EpiNum;
+        private int EpiNum; 
+        private string EpiURL;
 
 
         public Episode (int ID) 

@@ -10,12 +10,12 @@ namespace NetflixBL
 {
     public class User
     {
-        private string username { get; }
-        private string pass { get; }
-        private int MyAdmin { get; }
-        private int subscriptiontype { get; }
-        private string email { get; }
-        private List<Series> SeriesList { get; set; }
+        private string username;
+        private string pass;
+        private int MyAdmin;
+        private int subscriptiontype;
+        private string email;
+        private List<Series> SeriesList;
 
         public User (string ID){
 

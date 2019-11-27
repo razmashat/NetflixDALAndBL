@@ -57,7 +57,11 @@ namespace NetflixDAL
             return OleDbHelper.Fill("select * from " + TABEL + " WHERE " + filed3 + " = " + username + " AND " + filed4 + " = " +EpiID ,"rateByUserTbl");
         }
 
-
+        public static DataSet GetRateByEpisode(int eid)
+        {
+            
+            return OleDbHelper.Fill("select * from " + TABEL + " WHERE " + filed4 + " = " + eid, "rateByEpiTbl");
+        }
 
         public static void UpdateRateByID(string Author, int stars, int EpiNun, int subid)
         {

@@ -17,6 +17,7 @@ namespace NetflixBL
         private int SeasonNum;
         private int EpiNum; 
         private string EpiURL;
+        private List<Rate> Rates;
 
 
         public Episode (int ID) 
@@ -28,8 +29,20 @@ namespace NetflixBL
             EpiSeries = int.Parse(ds.Tables["epiByIdTbl"].Rows[0]["EpiSeries"].ToString());
             SeasonNum = int.Parse(ds.Tables["epiByIdTbl"].Rows[0]["SeasonNum"].ToString());
             EpiNum = int.Parse(ds.Tables["epiByIdTbl"].Rows[0]["EpiNum"].ToString());
+            Rates = new List<Rate>();
             
             
+        }
+
+        public void GetEpisodes()
+        {
+
+            DataSet ds = rateDAL.GetRateByEpisode(EpisdeID);
+            for (int i = 0; i < ds.Tables["rateByEpiTbl"].Rows.Count; i++)
+            {
+                Rates.Add(new Rate(int.Parse(ds.Tables["rateByEpiTbl"].Rows[i]["RateID"].ToString())));
+            }
+
         }
     }
 }

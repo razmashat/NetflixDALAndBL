@@ -13,21 +13,21 @@ namespace NetflixBL
         private string username;
         private string pass;
         private int MyAdmin;
-        private int subscriptiontype;
+        Subscription sub;
         private string email;
         private List<Series> SeriesList;
-
         private List<playlist> PlaylistList;
 
         public User (string ID){
 
             DataSet ds = UserDAL.GetuserByID(ID);
-            username = ds.Tables["adminByIdTbl"].Rows[0]["username"].ToString();
-            pass = ds.Tables["adminByIdTbl"].Rows[0]["pass"].ToString();
-            subscriptiontype = int.Parse(ds.Tables["adminByIdTbl"].Rows[0]["subscriptiontype"].ToString());
-            MyAdmin = int.Parse(ds.Tables["adminByIdTbl"].Rows[0]["MyAdmin"].ToString());
-            email = ds.Tables["adminByIdTbl"].Rows[0]["email"].ToString();
+            username = ds.Tables["userByIdTbl"].Rows[0]["username"].ToString();
+            pass = ds.Tables["userByIdTbl"].Rows[0]["pass"].ToString();
+            sub = new Subscription(int.Parse(ds.Tables["userByIdTbl"].Rows[0]["subscriptiontype"].ToString()));
+            MyAdmin = int.Parse(ds.Tables["userByIdTbl"].Rows[0]["MyAdmin"].ToString());
+            email = ds.Tables["userByIdTbl"].Rows[0]["email"].ToString();
             SeriesList = new List<Series>();
+            PlaylistList = new List<playlist>();
             
 
         }
@@ -78,7 +78,7 @@ namespace NetflixBL
 
         public int AddSeries(int sid)
         {
-            Subscription sub = new Subscription(subscriptiontype);
+            
             if (SeriesList.Count >= sub.Seriesamount)
             {
                 return -1;

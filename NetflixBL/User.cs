@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -16,6 +16,8 @@ namespace NetflixBL
         private int subscriptiontype;
         private string email;
         private List<Series> SeriesList;
+
+        private List<playlist> PlaylistList;
 
         public User (string ID){
 
@@ -39,6 +41,17 @@ namespace NetflixBL
                 SeriesList.Add(new Series(int.Parse(ds.Tables["sandstbl"].Rows[i]["SeriesID"].ToString())));
             }
 
+        }
+
+
+        public void GetPlaylist() 
+        {
+            
+            DataSet ds = playlistDAL.GetPlaylistByUser(username);
+            for (int i = 0; i < ds.Tables["playlistByUser"].Rows.Count; i++) 
+            {
+                PlaylistList.Add(new playlist(int.Parse(ds.Tables["playlistByUser"].Rows[i]["PlayListID"].ToString())));
+            } 
         }
 
 

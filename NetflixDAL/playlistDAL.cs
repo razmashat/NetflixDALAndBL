@@ -49,6 +49,14 @@ namespace NetflixDAL
         }
 
 
+        public static DataSet GetPlaylistByUser(string uid) 
+        {
+            uid = stringbuilder(uid);
+            return OleDbHelper.Fill("select * from " + TABEL + "WHERE" + filed2 + "=" + uid,"playlistByUser");
+        }
+
+
+
         public static DataSet InnerjoinSeries(int id) {
 
 

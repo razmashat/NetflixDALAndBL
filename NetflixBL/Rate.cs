@@ -32,9 +32,11 @@ namespace NetflixBL
 
      }
 
-      
+       
 
-        
-
+        public int rateID { get => RateID; set { } }
+        public int starts { get => Starts; set { } }
+        public string author { get => Author; set { } }
+        public int episodeRated { get => EpisodeRated; set { } }
     }
 }

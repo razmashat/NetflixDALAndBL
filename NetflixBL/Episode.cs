@@ -19,6 +19,16 @@ namespace NetflixBL
         private string EpiURL;
         private List<Rate> Rates;
 
+        public int episdeID { get => EpisdeID; set { } }
+        public string episodeName { get => EpisodeName; set { } }
+        public int episodeLength { get => EpisodeLength; set { } }
+        public int epiSeries { get => EpiSeries; set { } }
+        public int seasonNum { get => SeasonNum; set { } }
+        public int epiNum { get => EpiNum; set { } }
+        public string epiURL { get => EpiURL; set { } }
+        public List<Rate> rates { get => Rates; set { } }
+
+        public double avgrate { get { return AvgRate(); } set { } }
 
         public Episode (int ID) 
         {
@@ -30,11 +40,12 @@ namespace NetflixBL
             SeasonNum = int.Parse(ds.Tables["epiByIdTbl"].Rows[0]["SeasonNum"].ToString());
             EpiNum = int.Parse(ds.Tables["epiByIdTbl"].Rows[0]["EpiNum"].ToString());
             Rates = new List<Rate>();
+            GetRates();
             
             
         }
 
-        public void GetEpisodes()
+        public void GetRates()
         {
 
             DataSet ds = rateDAL.GetRateByEpisode(EpisdeID);
@@ -44,5 +55,19 @@ namespace NetflixBL
             }
 
         }
+
+            public double AvgRate()
+        {
+
+            double avgrate = 0;
+            for (int i = 0; i < Rates.Count; i++)
+            {
+                avgrate += Rates[i].starts;
+            }
+            avgrate = avgrate / Rates.Count;
+            return avgrate;
+
+        }
+
     }
 }

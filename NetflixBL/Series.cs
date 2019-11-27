@@ -28,12 +28,18 @@ namespace NetflixBL
              description = ds.Tables["seriesByIdTbl"].Rows[0]["description"].ToString();
              SeriesAdmin = int.Parse(ds.Tables["seriesByIdTbl"].Rows[0]["SeriesAdmin"].ToString());
              episodelist = new List<Episode>();
+             GetEpisodes();
              
 
              
              
       }
 
+        public int seriesID { get => SeriesID; set { } }
+        public string seriesName { get => SeriesName; set { } }
+        public int seriesAdmin { get => SeriesAdmin; set { } }
+        public string Description { get => description; set { } }
+        public List<Episode> Episodelist { get => episodelist; set { } }
 
         public void GetEpisodes()
         {
@@ -43,6 +49,16 @@ namespace NetflixBL
                 episodelist.Add(new Episode(int.Parse(ds.Tables["epiBySidTbl"].Rows[i]["EpisdeID"].ToString())));
             }
 
+
+        }
+
+
+        public int GetWatchers()
+        {
+
+            DataSet ds = SeriesDAL.InnerjoinUser(SeriesID);
+            return ds.Tables["uandstbl"].Rows.Count;
+            
 
         }
 

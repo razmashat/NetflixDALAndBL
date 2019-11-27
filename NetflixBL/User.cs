@@ -68,12 +68,7 @@ namespace NetflixBL
 
         }
 
-        public DataSet SearchSeries(string name)
-        {
-
-            return SeriesDAL.GetSeriesByName(name);
-
-        }
+      
 
 
         public int AddSeries(int sid)

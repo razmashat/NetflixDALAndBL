@@ -51,7 +51,12 @@ namespace NetflixBL
             return 0;
         }
 
+        public DataSet SearchSeries(string name)
+        {
 
+            return SeriesDAL.GetSeriesByName(name);
+
+        }
 
 
     }

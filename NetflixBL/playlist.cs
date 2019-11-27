@@ -19,5 +19,8 @@ namespace NetflixBL
             PlayListID = int.Parse(ds.Tables["playlistByIdTbl"].Rows[0]["PlayListID"].ToString());
             MyUser = ds.Tables["playlistByIdTbl"].Rows[0]["MyUser"].ToString();
         }
+
+        public int playListID { get => PlayListID; set { } }
+        public string myUser { get => MyUser; set { } }
     }
 }

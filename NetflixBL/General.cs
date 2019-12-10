@@ -26,7 +26,7 @@ namespace NetflixBL
         }
 
 
-        public int Login(string username, string pass)
+        public static int Login(string username, string pass)
         {
             if (UserDAL.IsExist(username))
             {

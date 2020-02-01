@@ -7,11 +7,22 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace NetflixUI {
-    
-    
-    public partial class Login {
-        
+namespace NetflixUI
+{
+
+
+    public partial class Login
+    {
+
+        /// <summary>
+        /// LoginForm control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlForm LoginForm;
+
         /// <summary>
         /// usernameLabel control.
         /// </summary>
@@ -20,7 +31,7 @@ namespace NetflixUI {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label usernameLabel;
-        
+
         /// <summary>
         /// usernameTextbox control.
         /// </summary>
@@ -29,7 +40,7 @@ namespace NetflixUI {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox usernameTextbox;
-        
+
         /// <summary>
         /// passwordLabel control.
         /// </summary>
@@ -38,7 +49,7 @@ namespace NetflixUI {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label passwordLabel;
-        
+
         /// <summary>
         /// passwordTextbox control.
         /// </summary>
@@ -47,7 +58,7 @@ namespace NetflixUI {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox passwordTextbox;
-        
+
         /// <summary>
         /// LoginButton control.
         /// </summary>

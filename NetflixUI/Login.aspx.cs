@@ -10,10 +10,14 @@ namespace NetflixUI
 {
     public partial class Login : System.Web.UI.Page
     {
+         public string error;
         
         protected void Page_Load(object sender, EventArgs e)
         {
-            
+            if(!IsPostBack)
+            {
+                error = "";
+            }
         }
 
        
@@ -32,6 +36,7 @@ namespace NetflixUI
                     break;
 
                 default:
+                    error = "failed to login";
                     break;
             }
         }

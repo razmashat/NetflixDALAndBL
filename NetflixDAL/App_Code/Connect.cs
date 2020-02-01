@@ -10,7 +10,7 @@ namespace DrivingDAL
         public static string GetConnectionString()
         {
             //return @"provider=Microsoft.ACE.OLEDB.12.0; Data source=C:\Users\laptop\Desktop\תשעט\RamonDrivingSchool\DrivingDAL\App_Data\AtMaDb11.accdb";
-            return @"provider =Microsoft.ACE.OLEDB.12.0; Data source=F:\NetflixDALFinal\NetflixDAL\App_Data\RazMashat.accdb";
+            return @"provider =Microsoft.ACE.OLEDB.12.0; Data source=C:\Users\Raz\Source\Repos\razmashat\NetflixDALAndBL\NetflixDAL\App_Data\RazMashat.accdb";
             //  return @"provider=Microsoft.ACE.OLEDB.12.0; Data source=C:\Users\laptop\Desktop\תשעט\Driving2018_2019\Driving2018_2019\RamonDrivingSchool\DrivingDAL\App_Data\AtMaDb11.accdb";
             //  return @"provider =Microsoft.ACE.OLEDB.12.0; Data source=..\..\App_Data\AtMaDb11.accdb";
             //********* string connString = @"Provider =Microsoft.Jet.OLEDB.4.0;data source=" + path;  //mdb  עבור סיומת

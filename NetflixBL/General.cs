@@ -12,7 +12,7 @@ namespace NetflixBL
     {
 
 
-        public bool SignUp(string username,string pass,int adminid,int subtype,string email) {
+        public static bool SignUp(string username,string pass,int adminid,int subtype,string email) {
 
             if (UserDAL.IsExist(username))
             {

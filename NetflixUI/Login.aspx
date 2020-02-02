@@ -3,8 +3,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
-    <form id="LoginForm" runat="server">
-<div>
+
     <asp:Label ID="usernameLabel" runat="server" Text="username:"></asp:Label>
    
 
@@ -24,8 +23,8 @@
 &nbsp;
     <br />
     <%=error %>
-   </div>
-   </form>
+   
+   
 
 
 </asp:Content>

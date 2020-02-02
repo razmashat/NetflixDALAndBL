@@ -10,7 +10,11 @@
 
 </head>
 <body>
+ 
     <form id="form1" runat="server">
+           <asp:Panel ID="Panel1" runat="server">
+        <asp:Button ID="Button1" runat="server" Text="Button" OnClick="Button1_Click" /><asp:Button ID="Button2" runat="server" Text="Button" OnClick="Button2_Click" style="height: 26px" />
+    </asp:Panel>
         <div>
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
             </asp:ContentPlaceHolder>

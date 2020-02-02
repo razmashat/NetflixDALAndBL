@@ -28,10 +28,12 @@ namespace NetflixUI
             {
                 case 1:
                     Session["Login"] = "user";
+                    Session["Username"] = usernameTextbox.Text;
                     Response.Redirect("User.aspx");
                     break;
                 case 2:
                     Session["Login"] = "admin";
+                    Session["adminID"] = int.Parse(usernameTextbox.Text);
                     Response.Redirect("Admin.aspx");
                     break;
 

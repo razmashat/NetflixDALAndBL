@@ -7,14 +7,12 @@ using System.Web.UI.WebControls;
 
 namespace NetflixUI
 {
-    public partial class Admin : System.Web.UI.Page
+    public partial class Signout : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!((string)Session["Login"] == "admin"))
-            {
-                Response.Redirect("Login.aspx");
-            }
+            Session.Abandon();
+            Response.Redirect("Login.aspx");
         }
     }
 }

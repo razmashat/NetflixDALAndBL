@@ -7,22 +7,11 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace NetflixUI
-{
-
-
-    public partial class Signup
-    {
-
-        /// <summary>
-        /// regform control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm regform;
-
+namespace NetflixUI {
+    
+    
+    public partial class Signup {
+        
         /// <summary>
         /// Label1 control.
         /// </summary>
@@ -31,7 +20,7 @@ namespace NetflixUI
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Label1;
-
+        
         /// <summary>
         /// username control.
         /// </summary>
@@ -40,7 +29,7 @@ namespace NetflixUI
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox username;
-
+        
         /// <summary>
         /// RequiredFieldValidator1 control.
         /// </summary>
@@ -49,7 +38,7 @@ namespace NetflixUI
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator1;
-
+        
         /// <summary>
         /// RegularExpressionValidator1 control.
         /// </summary>
@@ -58,7 +47,7 @@ namespace NetflixUI
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RegularExpressionValidator RegularExpressionValidator1;
-
+        
         /// <summary>
         /// Label2 control.
         /// </summary>
@@ -67,7 +56,7 @@ namespace NetflixUI
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Label2;
-
+        
         /// <summary>
         /// password control.
         /// </summary>
@@ -76,7 +65,7 @@ namespace NetflixUI
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox password;
-
+        
         /// <summary>
         /// RequiredFieldValidator2 control.
         /// </summary>
@@ -85,7 +74,7 @@ namespace NetflixUI
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator2;
-
+        
         /// <summary>
         /// RegularExpressionValidator2 control.
         /// </summary>
@@ -94,7 +83,7 @@ namespace NetflixUI
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RegularExpressionValidator RegularExpressionValidator2;
-
+        
         /// <summary>
         /// subscription control.
         /// </summary>
@@ -103,7 +92,7 @@ namespace NetflixUI
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList subscription;
-
+        
         /// <summary>
         /// RequiredFieldValidator3 control.
         /// </summary>
@@ -112,7 +101,7 @@ namespace NetflixUI
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator3;
-
+        
         /// <summary>
         /// Label4 control.
         /// </summary>
@@ -121,7 +110,7 @@ namespace NetflixUI
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Label4;
-
+        
         /// <summary>
         /// email control.
         /// </summary>
@@ -130,7 +119,7 @@ namespace NetflixUI
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox email;
-
+        
         /// <summary>
         /// RequiredFieldValidator4 control.
         /// </summary>
@@ -139,7 +128,7 @@ namespace NetflixUI
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator4;
-
+        
         /// <summary>
         /// RegularExpressionValidator3 control.
         /// </summary>
@@ -148,5 +137,14 @@ namespace NetflixUI
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RegularExpressionValidator RegularExpressionValidator3;
+        
+        /// <summary>
+        /// submit control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button submit;
     }
 }

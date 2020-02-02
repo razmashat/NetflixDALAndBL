@@ -11,7 +11,49 @@ namespace NetflixUI
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if ((string)Session["Login"] == "user")
+            {
+                Button1.Text = "Profile";
+                Button2.Text = "Sign out";
+            }
+            else if ((string)Session["Login"] == "admin")
+            {
+                Button1.Text = "Admin Page";
+                Button2.Text = "Sign out";
+            }
+            else
+            {
+                Button1.Text = "Log in";
+                Button2.Text = "Sign up";
+            }
+        }
 
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            if ((string)Session["Login"] == "user")
+            {
+                Response.Redirect("User.aspx");
+            }
+            else if ((string)Session["Login"] == "admin")
+            {
+                Response.Redirect("Admin.aspx");
+            }
+            else
+            {
+                Response.Redirect("Login.aspx");
+            }
+        }
+
+        protected void Button2_Click(object sender, EventArgs e)
+        {
+            if ((string)Session["Login"] == "user" || (string)Session["Login"] == "admin")
+            {
+                Response.Redirect("Signout.aspx");
+            }
+            else
+            {
+                Response.Redirect("Signup.aspx");
+            }
         }
     }
 }

@@ -69,6 +69,7 @@
   <ItemGroup>
     <Content Include="Admin.aspx" />
     <Content Include="Login.aspx" />
+    <Content Include="Signout.aspx" />
     <Content Include="Signup.aspx" />
     <Content Include="User.aspx" />
     <Content Include="Web.config" />
@@ -96,6 +97,13 @@
       <DependentUpon>MastePage.Master</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Signout.aspx.cs">
+      <DependentUpon>Signout.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Signout.aspx.designer.cs">
+      <DependentUpon>Signout.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Signup.aspx.cs">
       <DependentUpon>Signup.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

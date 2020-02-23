@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Data;
 using NetflixBL;
 
 namespace NetflixUI
@@ -14,24 +15,34 @@ namespace NetflixUI
         protected void Page_Load(object sender, EventArgs e)
         {
             
-            if (Session["Login"] != null)
+            if (Session["Login"] == null)
             {
                 Response.Redirect("Main.aspx");
             }
-
+            
+           
+            user = new NetflixBL.User((string)Session["Username"]);
+            user.GetSeries();
+            
+            DataList1.DataSource = user.SeriesList1;
             if (!IsPostBack)
             {
-                 user = new NetflixBL.User((string)Session["Username"]);
+                DataList1.DataBind();
             }
-            DataList1.DataSource = user.SeriesList1;
-            DataList1.DataBind();
         }
 
         protected void DataList1_ItemDataBound(object sender, DataListItemEventArgs e)
         {
             int i = e.Item.ItemIndex;
-            Series s = user.SeriesList1[i];
+            NetflixBL.Series s = user.SeriesList1[i];
             ((Label)e.Item.FindControl("sname")).Text = s.seriesName;
+            ((Label)e.Item.FindControl("sid")).Text = s.seriesID.ToString();
+        }
+
+        protected void DataList1_ItemCommand(object source, DataListCommandEventArgs e)
+        {
+            Session["sid"] = int.Parse(((Label)e.Item.FindControl("sid")).Text);
+            Response.Redirect("Series.aspx");
         }
     }
 }

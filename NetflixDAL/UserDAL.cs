@@ -54,7 +54,7 @@ namespace NetflixDAL
         {
 
             id = "\"" + id + "\"";
-            return OleDbHelper.Fill("SELECT UserTBL.UserID, SeriesAndUserTBL.SeriesID FROM " + TABEL + " INNER JOIN " + TABEL2 + " ON UserTBL.UserID = SeriesAndUserTBL.UserID WHERE SeriesAndUserTBL.UserID = " + id, "sandstbl");
+            return OleDbHelper.Fill("SELECT UserTBL.username, SeriesAndUserTBL.SeriesID FROM " + TABEL + " INNER JOIN " + TABEL2 + " ON UserTBL.username = SeriesAndUserTBL.UserID WHERE SeriesAndUserTBL.UserID = " + id, "sandstbl");
 
 
         }

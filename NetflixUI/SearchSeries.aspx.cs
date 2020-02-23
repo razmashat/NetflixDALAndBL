@@ -22,6 +22,7 @@ namespace NetflixUI
             DataSet ds = NetflixBL.General.SearchSeries(name);
             if (ds.Tables["seriesByIdTbl"].Rows.Count > 0)
             {
+                Session["sid"] = ds.Tables["seriesByIdTbl"].Rows[0]["SeriesID"];
                 Response.Redirect("Series.aspx");
             }
 

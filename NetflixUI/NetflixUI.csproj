@@ -72,6 +72,7 @@
     <Content Include="Main.aspx" />
     <Content Include="MySeries.aspx" />
     <Content Include="SearchSeries.aspx" />
+    <Content Include="Series.aspx" />
     <Content Include="Signout.aspx" />
     <Content Include="Signup.aspx" />
     <Content Include="User.aspx" />
@@ -120,6 +121,13 @@
     </Compile>
     <Compile Include="SearchSeries.aspx.designer.cs">
       <DependentUpon>SearchSeries.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Series.aspx.cs">
+      <DependentUpon>Series.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Series.aspx.designer.cs">
+      <DependentUpon>Series.aspx</DependentUpon>
     </Compile>
     <Compile Include="Signout.aspx.cs">
       <DependentUpon>Signout.aspx</DependentUpon>

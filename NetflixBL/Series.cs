@@ -8,7 +8,7 @@ using System.Data;
 
 namespace NetflixBL
 {
-    class Series
+    public class Series
     {
 
 
@@ -18,7 +18,7 @@ namespace NetflixBL
         private string description;
         private List<Episode> episodelist;
 
-      public Series (int ID){
+        public Series (int ID){
 
 
 

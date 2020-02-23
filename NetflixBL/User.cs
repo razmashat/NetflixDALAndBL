@@ -18,6 +18,14 @@ namespace NetflixBL
         private List<Series> SeriesList;
         private List<playlist> PlaylistList;
 
+        public string Username { get => username; set { } }
+        public string Pass { get => pass; set { } }
+        public int MyAdmin1 { get => MyAdmin; set { } }
+        public Subscription Sub { get => sub; set { } }
+        public string Email { get => email; set { } }
+        public List<Series> SeriesList1 { get => SeriesList; set { } }
+        public List<playlist> PlaylistList1 { get => PlaylistList; set { } }
+
         public User (string ID){
 
             DataSet ds = UserDAL.GetuserByID(ID);
@@ -36,6 +44,7 @@ namespace NetflixBL
         {
             
             DataSet ds = UserDAL.InnerjoinSeries(username);
+            SeriesList.Clear();
             for (int i = 0; i < ds.Tables["sandstbl"].Rows.Count; i++)
             {
                 SeriesList.Add(new Series(int.Parse(ds.Tables["sandstbl"].Rows[i]["SeriesID"].ToString())));
@@ -48,6 +57,7 @@ namespace NetflixBL
         {
             
             DataSet ds = playlistDAL.GetPlaylistByUser(username);
+            PlaylistList.Clear();
             for (int i = 0; i < ds.Tables["playlistByUser"].Rows.Count; i++) 
             {
                 PlaylistList.Add(new playlist(int.Parse(ds.Tables["playlistByUser"].Rows[i]["PlayListID"].ToString())));

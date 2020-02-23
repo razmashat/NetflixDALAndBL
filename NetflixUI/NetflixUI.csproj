@@ -69,6 +69,9 @@
   <ItemGroup>
     <Content Include="Admin.aspx" />
     <Content Include="Login.aspx" />
+    <Content Include="Main.aspx" />
+    <Content Include="MySeries.aspx" />
+    <Content Include="SearchSeries.aspx" />
     <Content Include="Signout.aspx" />
     <Content Include="Signup.aspx" />
     <Content Include="User.aspx" />
@@ -89,6 +92,13 @@
     <Compile Include="Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Main.aspx.cs">
+      <DependentUpon>Main.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Main.aspx.designer.cs">
+      <DependentUpon>Main.aspx</DependentUpon>
+    </Compile>
     <Compile Include="MastePage.Master.cs">
       <DependentUpon>MastePage.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -96,7 +106,21 @@
     <Compile Include="MastePage.Master.designer.cs">
       <DependentUpon>MastePage.Master</DependentUpon>
     </Compile>
+    <Compile Include="MySeries.aspx.cs">
+      <DependentUpon>MySeries.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MySeries.aspx.designer.cs">
+      <DependentUpon>MySeries.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SearchSeries.aspx.cs">
+      <DependentUpon>SearchSeries.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SearchSeries.aspx.designer.cs">
+      <DependentUpon>SearchSeries.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Signout.aspx.cs">
       <DependentUpon>Signout.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

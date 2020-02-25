@@ -20,7 +20,7 @@ namespace NetflixBL
         public string adminName { get => AdminName; set { } }
         public string adminPassword { get => AdminPassword; set { } }
         public List<User> MyUsers { get => myUsers; set { } }
-        internal List<Series> mySeries { get => MySeries; set { } }
+        public List<Series> mySeries { get => MySeries; set { } }
 
         public Admin(int ID) {
             DataSet ds = AdminDAL.GetAdminByID(ID);
@@ -35,6 +35,7 @@ namespace NetflixBL
         public void GetSeries()
         {
             MySeries = new List<Series>();
+            MySeries.Clear();
             DataSet ds = SeriesDAL.GetSeriesByAdmin(AdminID);
             for (int i = 0; i < ds.Tables["seriesByAdminTbl"].Rows.Count; i++)
             {
@@ -48,9 +49,11 @@ namespace NetflixBL
         {
 
             DataSet ds = UserDAL.GetuserByAdmin(AdminID);
+            myUsers = new List<User>();
+            myUsers.Clear();
             for (int i = 0; i < ds.Tables["userByAdminTbl"].Rows.Count; i++)
             {
-                MyUsers.Add(new User((ds.Tables["userByAdminTbl"].Rows[i]["username"].ToString())));
+                myUsers.Add(new User((ds.Tables["userByAdminTbl"].Rows[i]["username"].ToString())));
             }
 
         }

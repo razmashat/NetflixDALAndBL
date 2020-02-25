@@ -16,18 +16,21 @@ namespace NetflixUI
                 Button1.Text = "Profile";
                 Button2.Text = "Sign out";
                 Button3.Text = "My Series";
+                Button4.Text = "Search Series";
             }
             else if ((string)Session["Login"] == "admin")
             {
                 Button1.Text = "Admin Page";
                 Button2.Text = "Sign out";
-                Button3.Visible = false;
+                Button3.Text = "Add Series";
+                Button4.Visible = false;
             }
             else
             {
                 Button1.Text = "Log in";
                 Button2.Text = "Sign up";
                 Button3.Visible = false;
+                Button4.Visible = false;
             }
         }
 
@@ -64,6 +67,19 @@ namespace NetflixUI
             if ((string)Session["Login"] == "user")
             {
                 Response.Redirect("MySeries.aspx");
+            }
+
+            if ((string)Session["Login"] == "admin")
+            {
+                Response.Redirect("addseries.aspx");
+            }
+        }
+
+        protected void Button4_Click(object sender, EventArgs e)
+        {
+            if ((string)Session["Login"] == "user")
+            {
+                Response.Redirect("SearchSeries.aspx");
             }
         }
     }

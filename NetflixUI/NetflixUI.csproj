@@ -67,6 +67,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="addseries.aspx" />
     <Content Include="Admin.aspx" />
     <Content Include="Login.aspx" />
     <Content Include="Main.aspx" />
@@ -79,6 +80,13 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="addseries.aspx.cs">
+      <DependentUpon>addseries.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="addseries.aspx.designer.cs">
+      <DependentUpon>addseries.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Admin.aspx.cs">
       <DependentUpon>Admin.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

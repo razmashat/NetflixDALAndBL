@@ -23,7 +23,7 @@ namespace NetflixUI
                 Button1.Text = "Admin Page";
                 Button2.Text = "Sign out";
                 Button3.Text = "Add Series";
-                Button4.Visible = false;
+                Button4.Text = "Upload Episode";
             }
             else
             {
@@ -80,6 +80,11 @@ namespace NetflixUI
             if ((string)Session["Login"] == "user")
             {
                 Response.Redirect("SearchSeries.aspx");
+            }
+
+            if ((string)Session["Login"] == "admin")
+            {
+                Response.Redirect("UploadEpisode.aspx");
             }
         }
     }

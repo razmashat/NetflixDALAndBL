@@ -8,7 +8,7 @@
     <asp:FileUpload ID="FileUpload1" runat="server" />
     <br />
     <br />
-    <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
+    <asp:DropDownList ID="DropDownList1" runat="server"></asp:DropDownList>
     <br />
     <br />
     <asp:TextBox ID="TextBox2" runat="server"></asp:TextBox>

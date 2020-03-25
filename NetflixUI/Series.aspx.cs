@@ -41,10 +41,29 @@ namespace NetflixUI
                     seasons.Add((int)ds.Tables["episodeTBL"].Rows[i]["SeasonNum"]);
                 }
             }
-            for (int i = 0; i < seasons.Count; i++)
+            if (!Page.IsPostBack)
             {
-                drop.Items.Add(seasons[i].ToString());
+                for (int i = 0; i < seasons.Count; i++)
+                {
+                    drop.Items.Add(seasons[i].ToString());
+                }
+
+
+                DataSet ds1 = episodeDAL.GetAll();
+                List<Episode> episodes = new List<Episode>();
+                for (int i = 0; i < ds1.Tables["episodeTBL"].Rows.Count; i++)
+                {
+                    if ((int)ds1.Tables["episodeTBL"].Rows[i]["SeasonNum"] == seasons[0] && (int)ds.Tables["episodeTBL"].Rows[i]["EpiSeries"] == s.seriesID)
+                    {
+                        Episode episode = new Episode((int)ds1.Tables["episodeTBL"].Rows[i]["EpisdeID"]);
+                        episodes.Add(episode);
+                    }
+                    GridView1.DataSource = episodes;
+                    GridView1.DataBind();
+                }
+
             }
+        
         }
 
         protected void add_Click(object sender, EventArgs e)
@@ -76,6 +95,16 @@ namespace NetflixUI
                 GridView1.DataSource = episodes;
                 GridView1.DataBind();
             }
+        }
+
+        protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void GridView1_RowCommand(object sender, GridViewCommandEventArgs e)
+        {
+            
         }
     }
 }

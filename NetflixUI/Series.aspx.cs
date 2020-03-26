@@ -72,7 +72,7 @@ namespace NetflixUI
            
             if (-1 == user.AddSeries((int)Session["sid"]))
             {
-                error = "you watched the maximum amout og series you can!";
+                error = "you watched the maximum amount of series you can!";
                 return;
             }
             error = "added to your list!";

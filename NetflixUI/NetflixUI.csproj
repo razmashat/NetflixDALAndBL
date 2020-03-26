@@ -69,6 +69,7 @@
   <ItemGroup>
     <Content Include="addseries.aspx" />
     <Content Include="Admin.aspx" />
+    <Content Include="Episode.aspx" />
     <Content Include="Login.aspx" />
     <Content Include="Main.aspx" />
     <Content Include="MySeries.aspx" />
@@ -79,6 +80,7 @@
     <Content Include="UploadEpisode.aspx" />
     <Content Include="User.aspx" />
     <Content Include="vids\3S1E1.mp4" />
+    <Content Include="WatchEpisode.aspx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -97,6 +99,13 @@
     </Compile>
     <Compile Include="Admin.aspx.designer.cs">
       <DependentUpon>Admin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Episode.aspx.cs">
+      <DependentUpon>Episode.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Episode.aspx.designer.cs">
+      <DependentUpon>Episode.aspx</DependentUpon>
     </Compile>
     <Compile Include="Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
@@ -168,6 +177,13 @@
     </Compile>
     <Compile Include="User.aspx.designer.cs">
       <DependentUpon>User.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WatchEpisode.aspx.cs">
+      <DependentUpon>WatchEpisode.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WatchEpisode.aspx.designer.cs">
+      <DependentUpon>WatchEpisode.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

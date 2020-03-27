@@ -7,11 +7,13 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace NetflixUI {
-    
-    
-    public partial class Series {
-        
+namespace NetflixUI
+{
+
+
+    public partial class Series
+    {
+
         /// <summary>
         /// name control.
         /// </summary>
@@ -20,7 +22,7 @@ namespace NetflixUI {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label name;
-        
+
         /// <summary>
         /// desc control.
         /// </summary>
@@ -29,7 +31,7 @@ namespace NetflixUI {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label desc;
-        
+
         /// <summary>
         /// drop control.
         /// </summary>
@@ -38,7 +40,7 @@ namespace NetflixUI {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList drop;
-        
+
         /// <summary>
         /// add control.
         /// </summary>
@@ -47,7 +49,7 @@ namespace NetflixUI {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button add;
-        
+
         /// <summary>
         /// GridView1 control.
         /// </summary>
@@ -56,5 +58,14 @@ namespace NetflixUI {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.GridView GridView1;
+
+        /// <summary>
+        /// Stats control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Stats;
     }
 }

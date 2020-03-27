@@ -32,6 +32,21 @@ namespace NetflixBL
 
      }
 
+        public Rate(int RateID)
+        {
+
+
+            DataSet ds = rateDAL.GetRateByID(RateID);
+            RateID = int.Parse(ds.Tables["rateByIdTbl"].Rows[0]["RateID"].ToString());
+            Starts = int.Parse(ds.Tables["rateByIdTbl"].Rows[0]["Stars"].ToString());
+            Author = ds.Tables["rateByIdTbl"].Rows[0]["Author"].ToString();
+            EpisodeRated = int.Parse(ds.Tables["rateByIdTbl"].Rows[0]["EpisodeRated"].ToString());
+
+
+
+
+        }
+
         public static bool IsExistUser(string username, int EpiID) 
         {
             return rateDAL.IsExistUser(username,EpiID);

@@ -31,6 +31,7 @@
         </Columns>
     </asp:GridView>
      <br />
+    <asp:Label ID="Stats" runat="server" Text="Label"></asp:Label>
     <%=error %>
 
 

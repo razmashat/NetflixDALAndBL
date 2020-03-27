@@ -21,17 +21,22 @@ namespace NetflixUI
            user = new NetflixBL.User((string)Session["username"]);
             s = new NetflixBL.Series((int)Session["sid"]);
             user.GetSeries();
+            drop.Visible = false;
+            GridView1.Visible = false;
             for (int i = 0; i < user.SeriesList1.Count; i++)
             {
                 bool a = user.SeriesList1[i].seriesID == s.seriesID;
                 if (a==true)
                 {
                     add.Visible = false;
+                    drop.Visible = true;
+                    GridView1.Visible = true;
                     break;
                 }
             }
             name.Text = s.seriesName;
             desc.Text = s.Description;
+            Stats.Text = "watched by " + s.GetWatchers().ToString() + " users";
             DataSet ds = episodeDAL.GetAll();
             List<int> seasons = new List<int>();
             for (int i = 0; i < ds.Tables["episodeTBL"].Rows.Count; i++)
@@ -50,12 +55,12 @@ namespace NetflixUI
 
 
                 DataSet ds1 = episodeDAL.GetAll();
-                List<Episode> episodes = new List<Episode>();
+                List<NetflixBL.Episode> episodes = new List<NetflixBL.Episode>();
                 for (int i = 0; i < ds1.Tables["episodeTBL"].Rows.Count; i++)
                 {
                     if ((int)ds1.Tables["episodeTBL"].Rows[i]["SeasonNum"] == seasons[0] && (int)ds.Tables["episodeTBL"].Rows[i]["EpiSeries"] == s.seriesID)
                     {
-                        Episode episode = new Episode((int)ds1.Tables["episodeTBL"].Rows[i]["EpisdeID"]);
+                       NetflixBL.Episode episode = new NetflixBL.Episode((int)ds1.Tables["episodeTBL"].Rows[i]["EpisdeID"]);
                         episodes.Add(episode);
                     }
                     GridView1.DataSource = episodes;
@@ -84,12 +89,12 @@ namespace NetflixUI
         protected void drop_SelectedIndexChanged(object sender, EventArgs e)
         {
             DataSet ds = episodeDAL.GetAll();
-            List<Episode> episodes = new List<Episode>();
+            List<NetflixBL.Episode> episodes = new List<NetflixBL.Episode>();
             for (int i = 0; i < ds.Tables["episodeTBL"].Rows.Count; i++)
             {
                 if ((int)ds.Tables["episodeTBL"].Rows[i]["SeasonNum"] == int.Parse(drop.SelectedItem.Text) && (int)ds.Tables["episodeTBL"].Rows[i]["EpiSeries"] == s.seriesID)
                 {
-                    Episode episode = new Episode((int)ds.Tables["episodeTBL"].Rows[i]["EpisdeID"]);
+                    NetflixBL.Episode episode = new NetflixBL.Episode((int)ds.Tables["episodeTBL"].Rows[i]["EpisdeID"]);
                     episodes.Add(episode);
                 }
                 GridView1.DataSource = episodes;

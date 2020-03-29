@@ -12,7 +12,7 @@ namespace NetflixBL
     {
 
 
-        private int SubscriptionID;
+        private int subscriptionID;
         private string description;
         private int amountpermonth;
         private int SeriesAmount;
@@ -23,8 +23,11 @@ namespace NetflixBL
 
         }
 
+        public string Description { get => description; set => description = value; }
+        public int SubscriptionID { get => subscriptionID; set => subscriptionID = value; }
+        public int Amountpermonth { get => amountpermonth; set { } }
 
-    public Subscription(int ID) {
+        public Subscription(int ID) {
         
      
       DataSet ds = SubScriptionTypeTBLDAL.GetSubByID(ID);
@@ -38,7 +41,18 @@ namespace NetflixBL
 
 
 
-      } 
+      }
+
+        public static List<Subscription> GetAllSubs() 
+        {
+
+            List<Subscription> SubsList = new List<Subscription>();
+            DataSet ds = SubScriptionTypeTBLDAL.GetAll();
+            for (int i = 0; i < ds.Tables["SubScriptionTypeTBL"].Rows.Count; i++)
+                SubsList.Add(new Subscription(int.Parse(ds.Tables["SubScriptionTypeTBL"].Rows[i]["SubscriptionID"].ToString())));
+            return SubsList;
+        
+        }
       
        }
 }

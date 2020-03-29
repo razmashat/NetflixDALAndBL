@@ -56,15 +56,19 @@ namespace NetflixUI
 
                 DataSet ds1 = episodeDAL.GetAll();
                 List<NetflixBL.Episode> episodes = new List<NetflixBL.Episode>();
-                for (int i = 0; i < ds1.Tables["episodeTBL"].Rows.Count; i++)
+                if (seasons.Count > 0)
                 {
-                    if ((int)ds1.Tables["episodeTBL"].Rows[i]["SeasonNum"] == seasons[0] && (int)ds.Tables["episodeTBL"].Rows[i]["EpiSeries"] == s.seriesID)
+                    for (int i = 0; i < ds1.Tables["episodeTBL"].Rows.Count; i++)
                     {
-                       NetflixBL.Episode episode = new NetflixBL.Episode((int)ds1.Tables["episodeTBL"].Rows[i]["EpisdeID"]);
-                        episodes.Add(episode);
+                        if ((int)ds1.Tables["episodeTBL"].Rows[i]["SeasonNum"] == seasons[0] && (int)ds.Tables["episodeTBL"].Rows[i]["EpiSeries"] == s.seriesID)
+                        {
+                            NetflixBL.Episode episode = new NetflixBL.Episode((int)ds1.Tables["episodeTBL"].Rows[i]["EpisdeID"]);
+                            episodes.Add(episode);
+                        }
+                        GridView1.DataSource = episodes;
+                        GridView1.DataBind();
                     }
-                    GridView1.DataSource = episodes;
-                    GridView1.DataBind();
+
                 }
 
             }
@@ -109,7 +113,9 @@ namespace NetflixUI
 
         protected void GridView1_RowCommand(object sender, GridViewCommandEventArgs e)
         {
-            
+            int RowIndex = int.Parse(e.CommandArgument.ToString());
+            Session["EpiID"] = int.Parse(GridView1.Rows[RowIndex].Cells[1].Text);
+            Response.Redirect("Episode.aspx");
         }
     }
 }

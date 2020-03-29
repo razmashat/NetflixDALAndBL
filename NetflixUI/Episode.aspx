@@ -16,6 +16,10 @@
             <asp:Label ID="Time" runat="server" Text="Label"></asp:Label>
 
 
+            <br />
+            <br />
+
+
             <asp:Label ID="AvgRate" runat="server" Text="Label"></asp:Label>
                  <br />
             <br />

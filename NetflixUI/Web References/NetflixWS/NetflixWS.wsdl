@@ -1,0 +1,304 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="Pay">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="c" type="tns:Card" />
+            <s:element minOccurs="0" maxOccurs="1" name="t" type="tns:Transaction" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="Card">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="CardNumber" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Owner" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="CVV" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="ExpMonth" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="ExpYear" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="FirstName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="LastName" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Balance" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Transaction">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="CardNumber" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Amount" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Payee" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="PayResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="PayResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CanPay">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="c" type="tns:Card" />
+            <s:element minOccurs="0" maxOccurs="1" name="t" type="tns:Transaction" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CanPayResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CanPayResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Income">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="payee" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IncomeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="IncomeResult" type="tns:ArrayOfTransaction" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfTransaction">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Transaction" nillable="true" type="tns:Transaction" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="UserLatesPay">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="payee" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="card" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UserLatesPayResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UserLatesPayResult" type="tns:Transaction" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UserPayment">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="card" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UserPaymentResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UserPaymentResult" type="tns:Card" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IsPaid">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="payee" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="card" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IsPaidResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="IsPaidResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="PaySoapIn">
+    <wsdl:part name="parameters" element="tns:Pay" />
+  </wsdl:message>
+  <wsdl:message name="PaySoapOut">
+    <wsdl:part name="parameters" element="tns:PayResponse" />
+  </wsdl:message>
+  <wsdl:message name="CanPaySoapIn">
+    <wsdl:part name="parameters" element="tns:CanPay" />
+  </wsdl:message>
+  <wsdl:message name="CanPaySoapOut">
+    <wsdl:part name="parameters" element="tns:CanPayResponse" />
+  </wsdl:message>
+  <wsdl:message name="IncomeSoapIn">
+    <wsdl:part name="parameters" element="tns:Income" />
+  </wsdl:message>
+  <wsdl:message name="IncomeSoapOut">
+    <wsdl:part name="parameters" element="tns:IncomeResponse" />
+  </wsdl:message>
+  <wsdl:message name="UserLatesPaySoapIn">
+    <wsdl:part name="parameters" element="tns:UserLatesPay" />
+  </wsdl:message>
+  <wsdl:message name="UserLatesPaySoapOut">
+    <wsdl:part name="parameters" element="tns:UserLatesPayResponse" />
+  </wsdl:message>
+  <wsdl:message name="UserPaymentSoapIn">
+    <wsdl:part name="parameters" element="tns:UserPayment" />
+  </wsdl:message>
+  <wsdl:message name="UserPaymentSoapOut">
+    <wsdl:part name="parameters" element="tns:UserPaymentResponse" />
+  </wsdl:message>
+  <wsdl:message name="IsPaidSoapIn">
+    <wsdl:part name="parameters" element="tns:IsPaid" />
+  </wsdl:message>
+  <wsdl:message name="IsPaidSoapOut">
+    <wsdl:part name="parameters" element="tns:IsPaidResponse" />
+  </wsdl:message>
+  <wsdl:portType name="NetflixWSSoap">
+    <wsdl:operation name="Pay">
+      <wsdl:input message="tns:PaySoapIn" />
+      <wsdl:output message="tns:PaySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CanPay">
+      <wsdl:input message="tns:CanPaySoapIn" />
+      <wsdl:output message="tns:CanPaySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Income">
+      <wsdl:input message="tns:IncomeSoapIn" />
+      <wsdl:output message="tns:IncomeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UserLatesPay">
+      <wsdl:input message="tns:UserLatesPaySoapIn" />
+      <wsdl:output message="tns:UserLatesPaySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UserPayment">
+      <wsdl:input message="tns:UserPaymentSoapIn" />
+      <wsdl:output message="tns:UserPaymentSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IsPaid">
+      <wsdl:input message="tns:IsPaidSoapIn" />
+      <wsdl:output message="tns:IsPaidSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="NetflixWSSoap" type="tns:NetflixWSSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Pay">
+      <soap:operation soapAction="http://tempuri.org/Pay" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CanPay">
+      <soap:operation soapAction="http://tempuri.org/CanPay" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Income">
+      <soap:operation soapAction="http://tempuri.org/Income" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserLatesPay">
+      <soap:operation soapAction="http://tempuri.org/UserLatesPay" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserPayment">
+      <soap:operation soapAction="http://tempuri.org/UserPayment" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsPaid">
+      <soap:operation soapAction="http://tempuri.org/IsPaid" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="NetflixWSSoap12" type="tns:NetflixWSSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Pay">
+      <soap12:operation soapAction="http://tempuri.org/Pay" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CanPay">
+      <soap12:operation soapAction="http://tempuri.org/CanPay" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Income">
+      <soap12:operation soapAction="http://tempuri.org/Income" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserLatesPay">
+      <soap12:operation soapAction="http://tempuri.org/UserLatesPay" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserPayment">
+      <soap12:operation soapAction="http://tempuri.org/UserPayment" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsPaid">
+      <soap12:operation soapAction="http://tempuri.org/IsPaid" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="NetflixWS">
+    <wsdl:port name="NetflixWSSoap" binding="tns:NetflixWSSoap">
+      <soap:address location="https://localhost:44343/NetflixWS.asmx" />
+    </wsdl:port>
+    <wsdl:port name="NetflixWSSoap12" binding="tns:NetflixWSSoap12">
+      <soap12:address location="https://localhost:44343/NetflixWS.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

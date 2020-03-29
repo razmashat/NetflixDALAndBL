@@ -10,5 +10,8 @@
     <asp:Label ID="Label2" runat="server" Text="my series:"></asp:Label>
     <br/>
     <asp:GridView ID="GridView2" runat="server"></asp:GridView>
+     <asp:Label ID="Label3" runat="server" Text="Total Parchu:"></asp:Label>
+    <br/>
+    <asp:GridView ID="GridView3" runat="server"></asp:GridView>
 
 </asp:Content>

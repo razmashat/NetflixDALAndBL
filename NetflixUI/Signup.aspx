@@ -41,11 +41,6 @@
     <br />
     <br />
 &nbsp;<asp:DropDownList ID="subscription" runat="server" OnSelectedIndexChanged="DropDownList1_SelectedIndexChanged">
-    <asp:ListItem Text="1" Value="1"></asp:ListItem>
-     <asp:ListItem Text="2" Value="2"></asp:ListItem>
-     <asp:ListItem Text="3" Value="3"></asp:ListItem>
-     <asp:ListItem Text="4" Value="4"></asp:ListItem>
-     <asp:ListItem Text="5" Value="5"></asp:ListItem>
     </asp:DropDownList>
     <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ErrorMessage="must choose subscription" ControlToValidate="subscription"></asp:RequiredFieldValidator>
     <br />
@@ -54,6 +49,28 @@
     
     
     <asp:Label ID="Label4" runat="server" Text="Email"></asp:Label>  &nbsp;&nbsp; <asp:TextBox ID="email" runat="server"></asp:TextBox> <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ErrorMessage="must have email!" ControlToValidate="email"></asp:RequiredFieldValidator> <asp:RegularExpressionValidator ID="RegularExpressionValidator3" runat="server" ErrorMessage="invalid email addres" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*" ControlToValidate="email"></asp:RegularExpressionValidator>
+    <br />
+    <br />
+    <asp:Label ID="Label3" runat="server" Text="Credit Card Number:"></asp:Label> &nbsp;&nbsp; <asp:TextBox ID="CreditCard" runat="server"></asp:TextBox>
+    <br />
+    <br />
+     <asp:Label ID="Label5" runat="server" Text="Owner ID:"></asp:Label> &nbsp;&nbsp; <asp:TextBox ID="Owner" runat="server"></asp:TextBox>
+    <br />
+    <br />
+     <asp:Label ID="Label6" runat="server" Text="CVV:"></asp:Label> &nbsp;&nbsp; <asp:TextBox ID="CVV" runat="server"></asp:TextBox>
+    <br />
+    <br />
+     <asp:Label ID="Label7" runat="server" Text="Experation Month:"></asp:Label> &nbsp;&nbsp; <asp:TextBox ID="ExpMonth" runat="server"></asp:TextBox>
+    <br />
+    <br />
+     <asp:Label ID="Label8" runat="server" Text="Experation Year:"></asp:Label> &nbsp;&nbsp; <asp:TextBox ID="ExpYear" runat="server"></asp:TextBox>
+    <br />
+    <br />
+     <asp:Label ID="Label9" runat="server" Text="First Name Of Cardholder:"></asp:Label> &nbsp;&nbsp; <asp:TextBox ID="FirstName" runat="server"></asp:TextBox>
+    <br />
+    <br />
+       <asp:Label ID="Label10" runat="server" Text="Last Name Of Cardholder:"></asp:Label> &nbsp;&nbsp; <asp:TextBox ID="LastName" runat="server"></asp:TextBox>
+    <br />
     <br />
     <asp:Button ID="submit" runat="server" Text="sign up" OnClick="submit_Click" />
 

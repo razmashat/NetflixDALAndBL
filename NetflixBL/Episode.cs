@@ -39,6 +39,7 @@ namespace NetflixBL
             EpiSeries = int.Parse(ds.Tables["epiByIdTbl"].Rows[0]["EpiSeries"].ToString());
             SeasonNum = int.Parse(ds.Tables["epiByIdTbl"].Rows[0]["SeasonNum"].ToString());
             EpiNum = int.Parse(ds.Tables["epiByIdTbl"].Rows[0]["EpiNum"].ToString());
+            EpiURL = ds.Tables["epiByIdTbl"].Rows[0]["EpiURL"].ToString();
             Rates = new List<Rate>();
             GetRates();
             

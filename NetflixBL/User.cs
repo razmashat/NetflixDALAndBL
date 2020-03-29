@@ -15,6 +15,7 @@ namespace NetflixBL
         private int MyAdmin;
         Subscription sub;
         private string email;
+        private string creditCard;
         private List<Series> SeriesList;
         private List<playlist> PlaylistList;
 
@@ -26,6 +27,8 @@ namespace NetflixBL
         public List<Series> SeriesList1 { get => SeriesList; set { } }
         public List<playlist> PlaylistList1 { get => PlaylistList; set { } }
 
+        public string CreditCard { get => creditCard; set { } }
+
         public User (string ID){
 
             DataSet ds = UserDAL.GetuserByID(ID);
@@ -34,6 +37,7 @@ namespace NetflixBL
             sub = new Subscription(int.Parse(ds.Tables["userByIdTbl"].Rows[0]["subscriptiontype"].ToString()));
             MyAdmin = int.Parse(ds.Tables["userByIdTbl"].Rows[0]["MyAdmin"].ToString());
             email = ds.Tables["userByIdTbl"].Rows[0]["email"].ToString();
+            creditCard = ds.Tables["userByIdTbl"].Rows[0]["CreditCard"].ToString();
             SeriesList = new List<Series>();
             PlaylistList = new List<playlist>();
             

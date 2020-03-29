@@ -12,15 +12,16 @@ namespace NetflixDAL
     {
         const string TABEL = "UserTBL";
         const string TABEL2 = "SeriesAndUserTBL";
-        public static void Insert(string username, string pass, int MyAdmin, int sub,string email)
+        public static void Insert(string username, string pass, int MyAdmin, int sub,string email,string card)
         {
             username = "\"" + username + "\"";
             pass = "\"" + pass + "\"";
             string MyAdmin1 = "\"" + MyAdmin.ToString() + "\"";
           string  sub1 = "\"" + sub.ToString() + "\"";
             email = "\"" + email + "\"";
+            card = "\"" + card + "\"";
 
-            OleDbHelper.DoQuery("INSERT INTO UserTBL (username,pass,MyAdmin,subscriptiontype,email) VALUES (" + username + "," + pass + "," + MyAdmin1 + "," + sub1 + "," + email + ")");
+            OleDbHelper.DoQuery("INSERT INTO UserTBL (username,pass,MyAdmin,subscriptiontype,email,CreditCard) VALUES (" + username + "," + pass + "," + MyAdmin1 + "," + sub1 + "," + email +","+ card+ ")");
         }
 
         public static DataSet GetAll()

@@ -19,9 +19,9 @@
 
     &nbsp;&nbsp;
     
-    <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="must have username" ControlToValidate="username"></asp:RequiredFieldValidator>
+    <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="must have username" ControlToValidate="username" EnableClientScript="False"></asp:RequiredFieldValidator>
 
-    <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ErrorMessage="invalid username" ControlToValidate="username" ValidationExpression="[aA-zZ]{1,10}"></asp:RegularExpressionValidator>
+    <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ErrorMessage="invalid username" ControlToValidate="username" ValidationExpression="[aA-zZ]{1,10}" EnableClientScript="False"></asp:RegularExpressionValidator>
 
 
 
@@ -36,19 +36,19 @@
 
 
 &nbsp;&nbsp;
-    <asp:TextBox ID="password" runat="server"></asp:TextBox><asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="must have passowrd" ControlToValidate="password"></asp:RequiredFieldValidator>
-    <asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server" ErrorMessage="password must conatin 1 lower case latter 1 number and 1 specail character" ValidationExpression="((?=.*\d)(?=.*[a-z])(?=.*[\W]).{8,20})" ControlToValidate="password"></asp:RegularExpressionValidator>
+    <asp:TextBox ID="password" runat="server"></asp:TextBox><asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="must have passowrd" ControlToValidate="password" EnableClientScript="False"></asp:RequiredFieldValidator>
+    <asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server" ErrorMessage="password must conatin 1 lower case latter 1 number and 1 specail character" ValidationExpression="((?=.*\d)(?=.*[a-z])(?=.*[\W]).{8,20})" ControlToValidate="password" EnableClientScript="False"></asp:RegularExpressionValidator>
     <br />
     <br />
 &nbsp;<asp:DropDownList ID="subscription" runat="server" OnSelectedIndexChanged="DropDownList1_SelectedIndexChanged">
     </asp:DropDownList>
-    <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ErrorMessage="must choose subscription" ControlToValidate="subscription"></asp:RequiredFieldValidator>
+    <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ErrorMessage="must choose subscription" ControlToValidate="subscription" Enabled="False"></asp:RequiredFieldValidator>
     <br />
     
     <br />
     
     
-    <asp:Label ID="Label4" runat="server" Text="Email"></asp:Label>  &nbsp;&nbsp; <asp:TextBox ID="email" runat="server"></asp:TextBox> <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ErrorMessage="must have email!" ControlToValidate="email"></asp:RequiredFieldValidator> <asp:RegularExpressionValidator ID="RegularExpressionValidator3" runat="server" ErrorMessage="invalid email addres" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*" ControlToValidate="email"></asp:RegularExpressionValidator>
+    <asp:Label ID="Label4" runat="server" Text="Email"></asp:Label>  &nbsp;&nbsp; <asp:TextBox ID="email" runat="server"></asp:TextBox> <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ErrorMessage="must have email!" ControlToValidate="email" EnableClientScript="False"></asp:RequiredFieldValidator> <asp:RegularExpressionValidator ID="RegularExpressionValidator3" runat="server" ErrorMessage="invalid email addres" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*" ControlToValidate="email" EnableClientScript="False"></asp:RegularExpressionValidator>
     <br />
     <br />
     <asp:Label ID="Label3" runat="server" Text="Credit Card Number:"></asp:Label> &nbsp;&nbsp; <asp:TextBox ID="CreditCard" runat="server"></asp:TextBox>

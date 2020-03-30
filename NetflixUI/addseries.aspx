@@ -4,10 +4,10 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
 
-    <asp:Label ID="Label1" runat="server" Text="series name:" ></asp:Label> &nbsp; <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox><asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="must enter series name" ControlToValidate="TextBox1"></asp:RequiredFieldValidator>
+    <asp:Label ID="Label1" runat="server" Text="series name:" ></asp:Label> &nbsp; <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox><asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="must enter series name" ControlToValidate="TextBox1" BorderStyle="Outset" EnableClientScript="False"></asp:RequiredFieldValidator>
+    &nbsp;<br/>
     <br/>
-    <br/>
-    <asp:Label ID="Label2" runat="server" Text="description:" ></asp:Label> &nbsp; <asp:TextBox ID="TextBox2" runat="server"></asp:TextBox><asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="must enter descreption" ControlToValidate="TextBox2"></asp:RequiredFieldValidator>
+    <asp:Label ID="Label2" runat="server" Text="description:" ></asp:Label> &nbsp; <asp:TextBox ID="TextBox2" runat="server"></asp:TextBox><asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="must enter descreption" ControlToValidate="TextBox2" EnableClientScript="False"></asp:RequiredFieldValidator>
     <br/>
     <br/>
     <asp:DropDownList ID="DropDownList1" runat="server">

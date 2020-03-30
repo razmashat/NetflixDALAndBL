@@ -63,5 +63,15 @@ namespace NetflixBL
         }
 
 
+        public static List<Series> GetAllSeries() 
+        {
+            List<Series> SeriesList = new List<Series>();
+            DataSet ds = SeriesDAL.GetAll();
+            for (int i = 0; i < ds.Tables["SeriesTBL"].Rows.Count; i++)
+                SeriesList.Add(new Series(int.Parse(ds.Tables["SeriesTBL"].Rows[i]["SeriesID"].ToString())));
+            return SeriesList;
+        }
+
+
     }
 }

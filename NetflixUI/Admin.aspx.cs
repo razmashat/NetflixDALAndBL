@@ -13,11 +13,12 @@ namespace NetflixUI
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            
+
             if (!((string)Session["Login"] == "admin"))
-            {
-                Response.Redirect("Login.aspx");
-            }
+                if (((string)Session["Login"] == "user"))
+                    Response.Redirect("User.aspx");
+                else
+                    Response.Redirect("Login.aspx");
             NetflixBL.Admin admin = new NetflixBL.Admin((int)Session["adminID"]);
             if (!Page.IsPostBack)
             {

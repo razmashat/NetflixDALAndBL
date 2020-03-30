@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data;
+using NetflixBL;
 
 namespace NetflixUI
 {
@@ -12,12 +13,16 @@ namespace NetflixUI
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (!Page.IsPostBack)
+            {
+                GridView1.DataSource = NetflixBL.Series.GetAllSeries();
+                GridView1.DataBind();
+            }
         }
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-            //only work with full name now should ad partial as well
+            //only work with full name now should add partial as well
             string name = searchbox.Text;
             DataSet ds = NetflixBL.General.SearchSeries(name);
             if (ds.Tables["seriesByIdTbl"].Rows.Count > 0)
@@ -26,6 +31,13 @@ namespace NetflixUI
                 Response.Redirect("Series.aspx");
             }
 
+        }
+
+        protected void GridView1_RowCommand(object sender, GridViewCommandEventArgs e)
+        {
+            int RowIndex = int.Parse(e.CommandArgument.ToString());
+            Session["sid"] = int.Parse(GridView1.Rows[RowIndex].Cells[1].Text);
+            Response.Redirect("Series.aspx");
         }
     }
 }

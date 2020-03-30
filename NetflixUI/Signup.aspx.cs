@@ -77,6 +77,7 @@ namespace NetflixUI
                     return;
                 }
                 err = "you have sucsussfully signed up!";
+                Response.Redirect("Login.aspx");
             }
         }
     }

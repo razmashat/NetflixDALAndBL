@@ -15,6 +15,11 @@ namespace NetflixUI
         static NetflixBL.Admin admin;
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (!((string)Session["Login"] == "admin"))
+                if (((string)Session["Login"] == "user"))
+                    Response.Redirect("User.aspx");
+                else
+                    Response.Redirect("Login.aspx");
             admin = new NetflixBL.Admin((int)Session["adminID"]);
             List<NetflixBL.Series> series = admin.mySeries;
             if (!Page.IsPostBack)
@@ -23,6 +28,7 @@ namespace NetflixUI
                 {
                     DropDownList1.Items.Add(series[i].seriesName);
                     DropDownList1.Items[i].Value = series[i].seriesID.ToString();
+                    DropDownList1.Items[i].Text = series[i].seriesName;
                 }
             }
           

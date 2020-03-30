@@ -56,6 +56,11 @@ namespace NetflixBL
 
         }
 
+        public void UpdateUser(string email, string password) 
+        {
+            UserDAL.UpdateUserByUsername(this.username,password,this.MyAdmin,this.Sub.SubscriptionID,email);
+        }
+
 
         public void GetPlaylist() 
         {
@@ -95,6 +100,11 @@ namespace NetflixBL
 
             SeriesAndUserDAL.Insert(username,sid);
             return 0;
+        }
+
+        public static bool IsUserExist(string user) 
+        {
+            return UserDAL.IsExist(user);
         }
     }
 }

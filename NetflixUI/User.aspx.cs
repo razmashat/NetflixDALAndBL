@@ -10,7 +10,7 @@ namespace NetflixUI
 {
     public partial class User : System.Web.UI.Page
     {
-        public string hello = "";
+        public string err = "";
         static NetflixBL.User user;
         static NetflixWS.Card card;
         protected void Page_Load(object sender, EventArgs e)
@@ -32,6 +32,18 @@ namespace NetflixUI
                 PaymentCard.Text += (" " + payment.CardNumber);
                 PaymentAmount.Text += (" " +payment.Amount);
                 PayerName.Text += (" " + card.FirstName + " " + card.LastName);
+                NewEmail.Text = user.Email;
+                NewPass.Text = user.Pass;
+                NewUsername.Text = user.Username;
+            }
+        }
+
+        protected void UpdateButton_Click(object sender, EventArgs e)
+        {
+            if (Page.IsValid)
+            {
+                user.UpdateUser(NewEmail.Text,NewPass.Text);
+                err = "updated details";
             }
         }
     }

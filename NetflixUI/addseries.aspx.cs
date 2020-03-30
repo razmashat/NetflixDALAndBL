@@ -13,7 +13,11 @@ namespace NetflixUI
         public static string error;
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (!((string)Session["Login"] == "admin"))
+                if (((string)Session["Login"] == "user"))
+                    Response.Redirect("User.aspx");
+                else
+                    Response.Redirect("Login.aspx"); 
         }
 
         protected void Button1_Click(object sender, EventArgs e)

@@ -16,6 +16,36 @@
       <br />
     <br />
     <asp:Label ID="PayerName" runat="server" Text="Payment Name:"></asp:Label>
+     <br />
+    <br />
+    <asp:Label ID="UserInfo" runat="server" Text="My Details:"></asp:Label>
+      <br />
+    <br />
+    <asp:Label ID="username" runat="server" Text="username:"></asp:Label>&nbsp;&nbsp; <asp:TextBox ID="NewUsername" runat="server"></asp:TextBox>
+     <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="must have username" ControlToValidate="NewUsername"></asp:RequiredFieldValidator>
+
+    <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ErrorMessage="invalid username" ControlToValidate="NewUsername" ValidationExpression="[aA-zZ]{1,10}"></asp:RegularExpressionValidator>
+      <br />
+    <br />
+    <asp:Label ID="password" runat="server" Text="password:"></asp:Label>&nbsp;&nbsp; <asp:TextBox ID="NewPass" runat="server"></asp:TextBox>
+<asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="must have passowrd" ControlToValidate="NewPass"></asp:RequiredFieldValidator>
+    <asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server" ErrorMessage="password must conatin 1 lower case latter 1 number and 1 specail character" ValidationExpression="((?=.*\d)(?=.*[a-z])(?=.*[\W]).{8,20})" ControlToValidate="NewPass"></asp:RegularExpressionValidator>
+
+    
+
+      <br />
+    <br />
+    <asp:Label ID="Subscription" runat="server" Text="Subscription:"></asp:Label>
+      <br />
+    <br />
+    <asp:Label ID="email" runat="server" Text="email:"></asp:Label>&nbsp;&nbsp; <asp:TextBox ID="NewEmail" runat="server"></asp:TextBox>
+    <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ErrorMessage="must have email!" ControlToValidate="NewEmail"></asp:RequiredFieldValidator> <asp:RegularExpressionValidator ID="RegularExpressionValidator3" runat="server" ErrorMessage="invalid email addres" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*" ControlToValidate="NewEmail"></asp:RegularExpressionValidator>
+      <br />
+    <br />
+    <asp:Button ID="UpdateButton" runat="server" Text="Update Details" OnClick="UpdateButton_Click" />
+
+   
+
 
 
 

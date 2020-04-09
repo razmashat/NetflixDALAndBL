@@ -10,7 +10,7 @@
 
     <br />
     <br />
-
+    <asp:Image ID="SeriesPoster" runat="server" />
     <br />
     <br />
     <asp:label ID="desc" runat="server" text="des"></asp:label>

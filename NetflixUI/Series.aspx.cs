@@ -52,7 +52,7 @@ namespace NetflixUI
                 {
                     drop.Items.Add(seasons[i].ToString());
                 }
-
+                SeriesPoster.ImageUrl = s.Posterurl;
 
                 DataSet ds1 = episodeDAL.GetAll();
                 List<NetflixBL.Episode> episodes = new List<NetflixBL.Episode>();

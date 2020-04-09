@@ -21,7 +21,7 @@
     <asp:Label ID="UserInfo" runat="server" Text="My Details:"></asp:Label>
       <br />
     <br />
-    <asp:Label ID="username" runat="server" Text="username:"></asp:Label>&nbsp;&nbsp; <asp:TextBox ID="NewUsername" runat="server"></asp:TextBox>
+    <asp:Label ID="username" runat="server" Text="username:">
      <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="must have username" ControlToValidate="NewUsername" EnableClientScript="False"></asp:RequiredFieldValidator>
 
     <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ErrorMessage="invalid username" ControlToValidate="NewUsername" ValidationExpression="[aA-zZ]{1,10}" EnableClientScript="False"></asp:RegularExpressionValidator>

@@ -25,7 +25,7 @@ namespace NetflixUI
             if (Page.IsValid)
             {
                 NetflixBL.Admin admin = new NetflixBL.Admin((int)Session["adminID"]);
-                admin.CreateSeries(TextBox1.Text,TextBox2.Text,DropDownList1.SelectedItem.Text);
+                admin.CreateSeries(TextBox1.Text,TextBox2.Text,DropDownList1.SelectedItem.Text,TextBox3.Text);
                 error = "series created!";
             }
         }

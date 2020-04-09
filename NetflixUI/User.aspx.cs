@@ -34,7 +34,8 @@ namespace NetflixUI
                 PayerName.Text += (" " + card.FirstName + " " + card.LastName);
                 NewEmail.Text = user.Email;
                 NewPass.Text = user.Pass;
-                NewUsername.Text = user.Username;
+                username.Text += user.Username;
+                Subscription.Text += " " + user.Sub.Description + " " + user.Sub.Seriesamount + " seriers includes";
             }
         }
 

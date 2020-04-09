@@ -58,10 +58,10 @@ namespace NetflixBL
 
         }
 
-        public void CreateSeries(string name,string descreption,string genre)
+        public void CreateSeries(string name,string descreption,string genre,string posterurl)
         {
 
-            SeriesDAL.Insert(name,AdminID,descreption,genre);
+            SeriesDAL.Insert(name,AdminID,descreption,genre,posterurl);
             GetSeries();
 
         }

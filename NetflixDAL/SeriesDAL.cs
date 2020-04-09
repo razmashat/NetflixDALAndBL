@@ -21,6 +21,7 @@ namespace NetflixDAL
         const string filed3 = "SeriesAdmin";
         const string filed4 = "description";
         const string filed5 = "Genre";
+        const string filed6 = "Poster";
 
 
 
@@ -30,13 +31,14 @@ namespace NetflixDAL
             return "\"" + s + "\"";
         }
 
-        public static void Insert(string seriename, int admin, string description, string genre)
+        public static void Insert(string seriename, int admin, string description, string genre,string posterlink)
         {
              seriename = stringbuilder(seriename);
-            string admin1 = stringbuilder(admin.ToString());
+            string admin1 = stringbuilder(admin.ToString()); 
             description = stringbuilder(description);
             genre = stringbuilder(genre);
-            OleDbHelper.InsertWithAutoNumKey("INSERT INTO " + TABEL + "(" + filed2 + "," + filed3 + "," + filed4 + ","+filed5+") VALUES (" + seriename + "," + admin + "," + description + ","+genre+")");
+            posterlink = stringbuilder(posterlink);
+            OleDbHelper.InsertWithAutoNumKey("INSERT INTO " + TABEL + "(" + filed2 + "," + filed3 + "," + filed4 + ","+filed5+","+filed6+") VALUES (" + seriename + "," + admin + "," + description + ","+genre+","+posterlink+")");
 
            
         }

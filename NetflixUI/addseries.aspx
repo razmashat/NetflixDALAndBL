@@ -8,7 +8,10 @@
     &nbsp;<br/>
     <br/>
     <asp:Label ID="Label2" runat="server" Text="description:" ></asp:Label> &nbsp; <asp:TextBox ID="TextBox2" runat="server"></asp:TextBox><asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="must enter descreption" ControlToValidate="TextBox2" EnableClientScript="False"></asp:RequiredFieldValidator>
+    <br />
     <br/>
+    <asp:Label ID="Label3" runat="server" Text="Poster url:"></asp:Label> &nbsp; <asp:TextBox ID="TextBox3" runat="server"></asp:TextBox><asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ErrorMessage="must enter poster url" ControlToValidate="TextBox3" EnableClientScript="False"></asp:RequiredFieldValidator>
+    <br />
     <br/>
     <asp:DropDownList ID="DropDownList1" runat="server">
         <asp:ListItem>Action</asp:ListItem>

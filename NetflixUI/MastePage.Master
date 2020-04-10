@@ -5,13 +5,14 @@
 <html>
 <head runat="server">
     <title></title>
+    <link href="flatbutton.css" rel="stylesheet" />
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 
 </head>
 <body>
  
-    <form id="form1" runat="server">
+    <form id="form1" runat="server" style="background-color:dimgray">
            <asp:Panel ID="Panel1" runat="server">
         <asp:Button ID="Button1" runat="server" Text="Button" OnClick="Button1_Click" /><asp:Button ID="Button2" runat="server" Text="Button" OnClick="Button2_Click" style="height: 26px" Visible="True" /><asp:Button ID="Button3" runat="server" Text="Button" OnClick="Button3_Click"/><asp:Button ID="Button4" runat="server" Text="Button" OnClick="Button4_Click" />
     </asp:Panel>

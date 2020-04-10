@@ -19,8 +19,6 @@ namespace NetflixUI
             {
                 Response.Redirect("Main.aspx");
             }
-            
-           
             user = new NetflixBL.User((string)Session["Username"]);
             user.GetSeries();
             
@@ -35,14 +33,22 @@ namespace NetflixUI
         {
             int i = e.Item.ItemIndex;
             NetflixBL.Series s = user.SeriesList1[i];
-            ((Label)e.Item.FindControl("sname")).Text = s.seriesName;
+            ((Button)e.Item.FindControl("sname")).Text = s.seriesName;
             ((Label)e.Item.FindControl("sid")).Text = s.seriesID.ToString();
+            ((Image)e.Item.FindControl("sposter")).ImageUrl = s.Posterurl;
+            ((Label)e.Item.FindControl("sdesc")).Text = s.Description;
+
         }
 
         protected void DataList1_ItemCommand(object source, DataListCommandEventArgs e)
         {
             Session["sid"] = int.Parse(((Label)e.Item.FindControl("sid")).Text);
             Response.Redirect("Series.aspx");
+        }
+
+        protected void DataList1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

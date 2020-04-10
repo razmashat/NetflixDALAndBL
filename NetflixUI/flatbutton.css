@@ -1,0 +1,30 @@
+﻿body {
+
+
+}
+
+.btn2 {
+    display: inline-block;
+    cursor: pointer;
+    text-align: center;
+    outline: 1px;
+    color: #fff;
+    background-color: #666;
+    border: none;
+    border-radius: 10px;
+
+}
+
+    .btn2:hover {
+        background-color: #9999FF
+    }
+
+    .btn2:active {
+        background-color: #9999FF;
+        box-shadow: 0 4px #666;
+        transform: translateY(5px);
+    }
+
+.LabelPaddingStyle {
+    padding: 10px;
+}

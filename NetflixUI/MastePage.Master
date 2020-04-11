@@ -6,11 +6,12 @@
 <head runat="server">
     <title></title>
     <link href="flatbutton.css" rel="stylesheet" />
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 
 </head>
-<body>
+<body style="background-color:dimgray">
  
     <form id="form1" runat="server" style="background-color:dimgray">
            <asp:Panel ID="Panel1" runat="server">

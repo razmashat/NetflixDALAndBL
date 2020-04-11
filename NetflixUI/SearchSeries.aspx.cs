@@ -11,12 +11,16 @@ namespace NetflixUI
 {
     public partial class SearchSeries : System.Web.UI.Page
     {
+        static List<NetflixBL.Series> slist;
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!Page.IsPostBack)
             {
-                GridView1.DataSource = NetflixBL.Series.GetAllSeries();
-                GridView1.DataBind();
+                slist = NetflixBL.Series.GetAllSeries();
+                //GridView1.DataSource = NetflixBL.Series.GetAllSeries();
+                DataList1.DataSource = slist;
+                DataList1.DataBind();
+                //GridView1.DataBind();
             }
         }
 
@@ -37,6 +41,22 @@ namespace NetflixUI
         {
             int RowIndex = int.Parse(e.CommandArgument.ToString());
             Session["sid"] = int.Parse(GridView1.Rows[RowIndex].Cells[1].Text);
+            Response.Redirect("Series.aspx");
+        }
+
+        protected void DataList1_ItemDataBound(object sender, DataListItemEventArgs e)
+        {
+            int i = e.Item.ItemIndex;
+            NetflixBL.Series s = slist[i];
+            ((Button)e.Item.FindControl("sname")).Text = s.seriesName;
+            ((Label)e.Item.FindControl("sid")).Text = s.seriesID.ToString();
+            ((Image)e.Item.FindControl("sposter")).ImageUrl = s.Posterurl;
+            ((Label)e.Item.FindControl("sdesc")).Text = s.Description;
+        }
+
+        protected void DataList1_ItemCommand(object source, DataListCommandEventArgs e)
+        {
+            Session["sid"] = int.Parse(((Label)e.Item.FindControl("sid")).Text);
             Response.Redirect("Series.aspx");
         }
     }

@@ -12,7 +12,7 @@
     <br />
     <asp:Label ID="Label2" runat="server" Text="All Series:"></asp:Label>
     <br />
-        <asp:DataList ID="DataList1" runat="server" OnItemDataBound="DataList1_ItemDataBound" OnItemCommand="DataList1_ItemCommand" Width="487px" OnSelectedIndexChanged="DataList1_SelectedIndexChanged" RepeatDirection="Horizontal" CellPadding="50" RepeatColumns="3">
+        <asp:DataList ID="DataList1" runat="server" OnItemDataBound="DataList1_ItemDataBound" OnItemCommand="DataList1_ItemCommand" Width="487px" RepeatDirection="Horizontal" CellPadding="50" RepeatColumns="3">
 
 
            <ItemTemplate>

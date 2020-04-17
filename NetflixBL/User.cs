@@ -28,7 +28,9 @@ namespace NetflixBL
         public List<playlist> PlaylistList1 { get => PlaylistList; set { } }
 
         public string CreditCard { get => creditCard; set { } }
+         public int SeriesWatched { get => SeriesList1.Count; }
 
+        public string SubType { get => sub.Description + " includes " + sub.Seriesamount + " series"; }
         public User (string ID){
 
             DataSet ds = UserDAL.GetuserByID(ID);

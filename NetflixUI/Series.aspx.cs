@@ -117,5 +117,16 @@ namespace NetflixUI
             Session["EpiID"] = int.Parse(GridView1.Rows[RowIndex].Cells[1].Text);
             Response.Redirect("Episode.aspx");
         }
+
+        protected void GridView1_DataBound(object sender, EventArgs e)
+        {
+            
+
+        }
+
+        protected void GridView1_SelectedIndexChanged1(object sender, EventArgs e)
+        {
+
+        }
     }
 }
